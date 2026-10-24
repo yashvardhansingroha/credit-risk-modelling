@@ -1,0 +1,17 @@
+{
+  "seed": 270,
+  "n_sample": 25000,
+  "n_full": 1344976,
+  "lgd": 0.6,
+  "stratification": "grade x default_flag x PD-decile, largest-remainder allocation",
+  "sample_auc": 0.7054,
+  "sample_gini": 0.4109,
+  "full_auc": 0.7054,
+  "full_gini": 0.4109,
+  "sample_exposure": 360022850.0,
+  "sample_ecl": 104250587.78,
+  "full_exposure": 19393447250.0,
+  "full_ecl": 5615626682.72,
+  "scale_factor": 53.867268,
+  "scaled_ecl": 5615694322.99
+}

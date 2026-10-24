@@ -1,0 +1,89 @@
+{
+  "roc_auc": 0.7054,
+  "f1": 0.425,
+  "decision_threshold": 0.51,
+  "gini": 0.4108,
+  "ks": 0.2987,
+  "n_loans": 1344976,
+  "portfolio_ecl": 5615626682.72,
+  "portfolio_exposure": 19393447250.0,
+  "ecl_coverage_ratio": 0.289563,
+  "lgd": 0.6,
+  "feature_iv": [
+    {
+      "feature": "term_months",
+      "iv": 0.1740152755670383,
+      "strength": "strong"
+    },
+    {
+      "feature": "dti",
+      "iv": 0.06851839065493184,
+      "strength": "medium"
+    },
+    {
+      "feature": "annual_inc",
+      "iv": 0.02807193223947394,
+      "strength": "medium"
+    },
+    {
+      "feature": "revol_util",
+      "iv": 0.023445060339308627,
+      "strength": "medium"
+    },
+    {
+      "feature": "emp_length_years",
+      "iv": 0.004208049951220413,
+      "strength": "weak"
+    }
+  ],
+  "train_size": 941483,
+  "test_size": 403493,
+  "psi": {
+    "score_psi": 0.0,
+    "score_psi_label": "stable",
+    "dti_psi": 0.0,
+    "dti_psi_label": "stable",
+    "grade_psi": 0.0001,
+    "grade_psi_label": "stable"
+  },
+  "stress_test": [
+    {
+      "scenario": "base",
+      "pd_multiplier": 1.0,
+      "pd_additive": 0.0,
+      "total_ecl": 5615617231.78,
+      "ecl_pct_of_exposure": 0.289563,
+      "delta_vs_base": -9450.94,
+      "delta_pct_vs_base": -2e-06
+    },
+    {
+      "scenario": "adverse",
+      "pd_multiplier": 1.5,
+      "pd_additive": 0.0,
+      "total_ecl": 8106842000.35,
+      "ecl_pct_of_exposure": 0.41802,
+      "delta_vs_base": 2491215317.63,
+      "delta_pct_vs_base": 0.443622
+    },
+    {
+      "scenario": "severe",
+      "pd_multiplier": 2.0,
+      "pd_additive": 0.0,
+      "total_ecl": 9623229663.66,
+      "ecl_pct_of_exposure": 0.49621,
+      "delta_vs_base": 4007602980.94,
+      "delta_pct_vs_base": 0.713652
+    },
+    {
+      "scenario": "recession",
+      "pd_multiplier": 1.0,
+      "pd_additive": 0.05,
+      "total_ecl": 6197261499.52,
+      "ecl_pct_of_exposure": 0.319554,
+      "delta_vs_base": 581634816.8,
+      "delta_pct_vs_base": 0.103574
+    }
+  ],
+  "underpriced_exposure": 10565877650.0,
+  "underpriced_exposure_pct": 0.544817
+}

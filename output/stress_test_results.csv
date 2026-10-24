@@ -1,0 +1,5 @@
+scenario,pd_multiplier,pd_additive,total_ecl,ecl_pct_of_exposure,delta_vs_base,delta_pct_vs_base
+base,1.0,0.0,5615617231.78,0.289563,-9450.94,-2e-06
+adverse,1.5,0.0,8106842000.35,0.41802,2491215317.63,0.443622
+severe,2.0,0.0,9623229663.66,0.49621,4007602980.94,0.713652
+recession,1.0,0.05,6197261499.52,0.319554,581634816.8,0.103574

@@ -1,0 +1,2 @@
+n_txns,fraud_rate,decline_rate,stepup_rate,precision_decline,recall_decline,false_positive_rate,tp,fp,fn,tn,fraud_dollars_blocked,fraud_dollars_missed,good_spend_blocked,false_positive_friction_cost,net_benefit_illustrative,auth_score_psi,auth_score_psi_label,decline_rate_by_band,fraud_rate_by_band
+411071,0.012056,0.044661,0.074968,0.2382,0.8824,0.0344,4373,13986,583,392129,2216532.94,46983.02,1430923.92,209790.0,2006742.94,0.0,stable,"{'High': 0.0854, 'Low': 0.028, 'Med': 0.0468}","{'High': 0.0274, 'Low': 0.0066, 'Med': 0.0121}"

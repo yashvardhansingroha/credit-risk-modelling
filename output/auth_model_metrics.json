@@ -1,0 +1,50 @@
+{
+  "auth_auc": 0.981,
+  "auth_precision_at_decline": 0.285,
+  "auth_recall_at_decline": 0.8857,
+  "auth_f1_at_decline": 0.4312,
+  "decline_cutoff": 0.65,
+  "stepup_cutoff": 0.4,
+  "n_txns": 411071,
+  "fraud_rate": 0.012056,
+  "decision_mix": {
+    "approve": 0.8804,
+    "step_up": 0.075,
+    "decline": 0.0447
+  },
+  "decline_rate_by_band": {
+    "High": 0.0854,
+    "Low": 0.028,
+    "Med": 0.0468
+  },
+  "portfolio": {
+    "n_txns": 411071,
+    "fraud_rate": 0.012056,
+    "decline_rate": 0.044661,
+    "stepup_rate": 0.074968,
+    "precision_decline": 0.2382,
+    "recall_decline": 0.8824,
+    "false_positive_rate": 0.0344,
+    "tp": 4373,
+    "fp": 13986,
+    "fn": 583,
+    "tn": 392129,
+    "fraud_dollars_blocked": 2216532.94,
+    "fraud_dollars_missed": 46983.02,
+    "good_spend_blocked": 1430923.92,
+    "false_positive_friction_cost": 209790.0,
+    "net_benefit_illustrative": 2006742.94,
+    "auth_score_psi": 0.0,
+    "auth_score_psi_label": "stable",
+    "decline_rate_by_band": {
+      "High": 0.0854,
+      "Low": 0.028,
+      "Med": 0.0468
+    },
+    "fraud_rate_by_band": {
+      "High": 0.0274,
+      "Low": 0.0066,
+      "Med": 0.0121
+    }
+  }
+}
