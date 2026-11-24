@@ -1,9 +1,24 @@
 # Lending Club Credit Risk Pipeline
 
-End-to-end retail credit risk stack: PostgreSQL ETL on ~2.2M Lending Club loans,
+End-to-end retail credit risk stack: PostgreSQL ETL on ~2.2M Lending Club loans (1,344,976 closed loans with a known outcome are modelled),
 stratified logistic PD model, WOE/IV application scorecard, PSI monitoring, risk-adjusted
 pricing, IFRS 9 ECL with stress scenarios, Power BI DAX measures, and a **Streamlit
 dashboard** that replicates the DAX logic on a light stratified sample.
+
+## Headline results
+
+Full book of **1,344,976 closed loans** (941,483 train / 403,493 test), latest run, from `output/model_metrics.json`.
+
+| | Result |
+|---|---|
+| PD model | Logistic regression, **ROC-AUC 0.705**, Gini 0.41, KS 0.30 |
+| Scorecard | WOE/IV application scorecard; strongest feature `term_months` (IV 0.174) |
+| Stability | Train vs test PSI ≈ 0.00 for score, DTI and grade (stable) |
+| IFRS 9-style ECL | $5.62B on $19.39B EAD (28.96% coverage, LGD fixed at 60%) |
+| Stress test | ECL +44% at 1.5× PD (adverse), +71% at 2× PD (severe), +10% with +5pp PD (recession) |
+| Pricing | 54.5% of exposure ($10.57B) priced below its risk-adjusted rate |
+
+Why 2.2M vs 1.34M: the raw file has ~2.2M loans; only loans with a final outcome (Fully Paid, Charged Off or Default) are kept, so the model is trained and scored on those 1,344,976.
 
 ## Prerequisites
 
@@ -26,7 +41,7 @@ streamlit run app.py            # dashboard (self-bootstraps sample if missing)
 pytest tests/ -q                # WOE/IV + ECL math + sample fidelity
 ```
 
-## Model & portfolio metrics (verified latest run, 1,344,976 scored loans)
+## Model & portfolio metrics (detail)
 
 | Metric | Value |
 |---|---|
@@ -68,17 +83,17 @@ Generation is deterministic (fixed-seed grid search) and the app self-bootstraps
 
 Import output/powerbi_scored_loan_data.csv into Power BI, then copy DAX measures from
 [4_powerbi_dax.txt](4_powerbi_dax.txt). For executive risk methodology and portfolio governance details,
-see [
-eports/RISK_MEMO.md](reports/RISK_MEMO.md).
+see [reports/RISK_MEMO.md](reports/RISK_MEMO.md).
+
 
 ## Project layout
 
-`
+```
 ├── 1_data_ingestion.py / 2_etl_pipeline.sql / 3_ml_risk_model.py
 ├── 4_powerbi_dax.txt / 5_portfolio_analytics.py / scorecard.py / config.py
 ├── create_light_sample.py / app.py / tests/test_credit_risk.py
 └── output/ / reports/ / requirements.txt / README.md
-`
+```
 
 ## Notes
 
